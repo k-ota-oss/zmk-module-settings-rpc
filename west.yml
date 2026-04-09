@@ -1,6 +1,33 @@
 # manifest to be imported by dependents (if dependency exists)
-manifest:
+remotes:
+    - name: cormoran
+      url-base: https://github.com/cormoran
+    - name: inorichi
+      url-base: https://github.com/inorichi
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
+  projects:
+    - name: zmk
+      remote: cormoran
+      revision: v0.3-branch+dya
+      import: app/west.yml
+    - name: zmk-module-ble-management
+      remote: cormoran
+      revision: main
+    - name: zmk-module-battery-history
+      remote: cormoran
+      revision: main
+    - name: zmk-module-settings-rpc
+      remote: cormoran
+      revision: main
+    - name: zmk-module-runtime-input-processor
+      remote: cormoran
+      revision: main
+    - name: zmk-pmw3610-driver
+      remote: inorichi
+      revision: main
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      revision: e9472d6
   self:
-    import: west/west-dependency/west-dependency.yml
-  # Please edit west/west-dependency/west-dependency.yml to change dependencies
-
+    path: config
